@@ -1,16 +1,21 @@
-// let username = prompt("Please enter your name:");
-// console.log("+ ", username)
+const readline = require('readline');
 
-var sum = 0
-var a = 1
-var b = 2
-var storage = 0
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-for (b < 4000000) {
-  storage = b
-  b += a
-  a = storage
+rl.question('Please enter the desired number to generate Fibonacci numbers up to: ', (input) => {
+  console.log('+', input);
+  var sum = parseInt(input);
+  var a = 1;
+  var b = 2;
+  var storage = 0;
+
   if (b % 2 === 0) {
-
+    console.log('b is even');
   }
-}
+  console.log(sum, a, b, storage)
+
+  rl.close();
+});
